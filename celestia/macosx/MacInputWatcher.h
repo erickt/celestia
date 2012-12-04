@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+#ifdef __cplusplus
+class _MacInputWatcher;
+#else
 @class _MacInputWatcher;
-
+#endif
 
 @interface MacInputWatcher : NSObject
 {
