@@ -19,6 +19,8 @@
 #endif /* TARGET_OS_MAC */
 #endif /* _WIN32 */
 
+#include "debug.h"
+
 static int debugVerbosity = 0;
 
 #if defined(DEBUG) || defined(_DEBUG)

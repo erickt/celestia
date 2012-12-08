@@ -110,13 +110,13 @@ static void skipBytes(ifstream& in, int count)
 }
 
 
-void indent()
+static void indent()
 {
     for (int i = 0; i < logIndent; i++)
         cout << "  ";
 }
 
-void logChunk(uint16 chunkType/*, int chunkSize*/)
+static void logChunk(uint16 chunkType/*, int chunkSize*/)
 {
     const char* name = NULL;
 
@@ -231,10 +231,10 @@ int read3DSChunk(ifstream& in,
 }
 
 
-int read3DSChunks(ifstream& in,
-                  int nBytes,
-                  ProcessChunkFunc chunkFunc,
-                  void* obj)
+static int read3DSChunks(ifstream& in,
+                         int nBytes,
+                         ProcessChunkFunc chunkFunc,
+                         void* obj)
 {
     int bytesRead = 0;
 
@@ -249,7 +249,7 @@ int read3DSChunks(ifstream& in,
 }
 
 
-M3DColor readColor(ifstream& in/*, int nBytes*/)
+static M3DColor readColor(ifstream& in/*, int nBytes*/)
 {
     unsigned char r = (unsigned char) readChar(in);
     unsigned char g = (unsigned char) readChar(in);
@@ -261,7 +261,7 @@ M3DColor readColor(ifstream& in/*, int nBytes*/)
 }
 
 
-M3DColor readFloatColor(ifstream& in/*, int nBytes*/)
+static M3DColor readFloatColor(ifstream& in/*, int nBytes*/)
 {
     float r = readFloat(in);
     float g = readFloat(in);
@@ -273,7 +273,7 @@ M3DColor readFloatColor(ifstream& in/*, int nBytes*/)
 }
 
 
-Matrix4f readMeshMatrix(ifstream& in/*, int nBytes*/)
+static Matrix4f readMeshMatrix(ifstream& in/*, int nBytes*/)
 {
     float m00 = readFloat(in);
     float m01 = readFloat(in);
@@ -311,7 +311,7 @@ Matrix4f readMeshMatrix(ifstream& in/*, int nBytes*/)
 }
 
 
-bool stubProcessChunk(/* ifstream& in,
+static bool stubProcessChunk(/* ifstream& in,
                          unsigned short chunkType,
                          int contentSize,
                          void* obj */)
@@ -320,7 +320,7 @@ bool stubProcessChunk(/* ifstream& in,
 }
 
 
-void readPointArray(ifstream& in, M3DTriangleMesh* triMesh)
+static void readPointArray(ifstream& in, M3DTriangleMesh* triMesh)
 {
     uint16 nPoints = readUshort(in);
 
@@ -334,7 +334,7 @@ void readPointArray(ifstream& in, M3DTriangleMesh* triMesh)
 }
 
 
-void readTextureCoordArray(ifstream& in, M3DTriangleMesh* triMesh)
+static void readTextureCoordArray(ifstream& in, M3DTriangleMesh* triMesh)
 {
     uint16 nPoints = readUshort(in);
 
@@ -347,7 +347,7 @@ void readTextureCoordArray(ifstream& in, M3DTriangleMesh* triMesh)
 }
 
 
-bool processFaceArrayChunk(ifstream& in,
+static bool processFaceArrayChunk(ifstream& in,
                            unsigned short chunkType,
                            int /*contentSize*/,
                            void* obj)
@@ -389,7 +389,7 @@ bool processFaceArrayChunk(ifstream& in,
 }
 
 
-void readFaceArray(ifstream& in, M3DTriangleMesh* triMesh, int contentSize)
+static void readFaceArray(ifstream& in, M3DTriangleMesh* triMesh, int contentSize)
 {
     uint16 nFaces = readUshort(in);
 
@@ -413,8 +413,8 @@ void readFaceArray(ifstream& in, M3DTriangleMesh* triMesh, int contentSize)
 }
 
 
-bool processTriMeshChunk(ifstream& in,
-                         unsigned short chunkType,
+static bool processTriMeshChunk(ifstream& in,
+                                unsigned short chunkType,
                          int contentSize,
                          void* obj)
 {
@@ -447,7 +447,7 @@ bool processTriMeshChunk(ifstream& in,
 }
 
 
-bool processModelChunk(ifstream& in,
+static bool processModelChunk(ifstream& in,
                        unsigned short chunkType,
                        int contentSize,
                        void* obj)
@@ -468,7 +468,7 @@ bool processModelChunk(ifstream& in,
 }
 
 
-bool processColorChunk(ifstream& in,
+static bool processColorChunk(ifstream& in,
                        unsigned short chunkType,
                        int /*contentSize*/,
                        void* obj)
@@ -536,7 +536,7 @@ static bool processTexmapChunk(ifstream& in,
 }
 
 
-bool processMaterialChunk(ifstream& in,
+static bool processMaterialChunk(ifstream& in,
                           unsigned short chunkType,
                           int contentSize,
                           void* obj)
@@ -599,10 +599,10 @@ bool processMaterialChunk(ifstream& in,
 }
 
 
-bool processSceneChunk(ifstream& in,
-                       unsigned short chunkType,
-                       int contentSize,
-                       void* obj)
+static bool processSceneChunk(ifstream& in,
+                              unsigned short chunkType,
+                              int contentSize,
+                              void* obj)
 {
     M3DScene* scene = (M3DScene*) obj;
 
@@ -646,10 +646,10 @@ bool processSceneChunk(ifstream& in,
 }
 
 
-bool processTopLevelChunk(ifstream& in,
-                          unsigned short chunkType,
-                          int contentSize,
-                          void* obj)
+static bool processTopLevelChunk(ifstream& in,
+                                 unsigned short chunkType,
+                                 int contentSize,
+                                 void* obj)
 {
     M3DScene* scene = (M3DScene*) obj;
 

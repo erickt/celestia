@@ -8,12 +8,12 @@
 using namespace Eigen;
 
 
-float bias(float a, float b)
+static float bias(float a, float b)
 {
     return (float) pow((double) a, log((double) b) / log(0.5));
 }
 
-float gain(float a, float b)
+static float gain(float a, float b)
 {
     float p = (float) (log(1.0 - b) / log(0.5));
 

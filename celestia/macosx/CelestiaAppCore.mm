@@ -378,7 +378,7 @@ CelestiaCore *appCore;
                     {
                         extrasDir = [NSString stringWithStdString: (*iter)];
                         if (([fm fileExistsAtPath: extrasDir = [extrasDir stringByStandardizingPath] isDirectory: &isFolder] && isFolder) ||
-                            [fm fileExistsAtPath: extrasDir = [resourceDir stringByAppendingPathComponent:extrasDir] isDirectory: &isFolder] && isFolder)
+                            ([fm fileExistsAtPath: extrasDir = [resourceDir stringByAppendingPathComponent:extrasDir] isDirectory: &isFolder] && isFolder))
                         {
                             extrasDirs.push_back([extrasDir stdString]);
                         }

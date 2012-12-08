@@ -276,7 +276,7 @@ static BOOL isSource(NSString *line, BOOL *containsNonKde)
 
     return isSource;
 }
-#endif TARGET_CELESTIA
+#endif // TARGET_CELESTIA
 
 /*! Does all the work of reading, converting, and writing. Returns the number of lines successfully converted. */
 static long convertData(NSData *data, NSStringEncoding encoding, NSFileHandle *ofh)
@@ -596,7 +596,7 @@ int main(int argc, const char **argv)
         // First detect the file encoding
         NSStringEncoding encoding = getCharset(data);
         if (gDebugLevel)
-            CFShow((CFStringRef)[NSString stringWithFormat:@"NSStringEncoding = %#lx", encoding]);
+            CFShow((CFStringRef)[NSString stringWithFormat:@"NSStringEncoding = %#x", encoding]);
 
         // Reread the file again, in the correct encoding
         long numConverted = 0;

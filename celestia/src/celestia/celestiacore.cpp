@@ -141,7 +141,7 @@ public:
 // useful even when the camera is very near the surface of an object.
 // Disable adjustments if the reference is a deep sky object, since they
 // have no true surface (and the observer is likely to be inside one.)
-float ComputeRotationCoarseness(Simulation& sim)
+static float ComputeRotationCoarseness(Simulation& sim)
 {
     float coarseness = 1.5f;
 
@@ -498,7 +498,7 @@ const DestinationList* CelestiaCore::getDestinations()
 
 
 // Used in the super-secret edit mode
-void showSelectionInfo(const Selection& sel)
+static void showSelectionInfo(const Selection& sel)
 {
     Quaternionf orientation;
     if (sel.deepsky() != NULL)
@@ -642,7 +642,7 @@ void CelestiaCore::runScript(const string& filename)
 }
 
 
-bool checkMask(int modifiers, int mask)
+static bool checkMask(int modifiers, int mask)
 {
     return (modifiers & mask) == mask;
 }
