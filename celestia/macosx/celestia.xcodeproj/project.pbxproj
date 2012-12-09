@@ -345,7 +345,7 @@
 		};
 		E567F018099110C000D05031 /* Copy Data */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = CelestiaResources/data;
 			dstSubfolderSpec = 7;
 			files = (
@@ -387,17 +387,17 @@
 				E567F095099112EC00D05031 /* world-capitals.ssc in Copy Data */,
 			);
 			name = "Copy Data";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E567F0400991111C00D05031 /* Copy Extras */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = CelestiaResources/extras;
 			dstSubfolderSpec = 7;
 			files = (
 			);
 			name = "Copy Extras";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E56917DA0778217300F0F0AF /* Copy Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -413,7 +413,7 @@
 		};
 		E572837407939F2500C1F239 /* Copy Misc */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = CelestiaResources;
 			dstSubfolderSpec = 7;
 			files = (
@@ -427,11 +427,11 @@
 				E572837C0793A02800C1F239 /* celestia.cfg in Copy Misc */,
 			);
 			name = "Copy Misc";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E5D7666E0982B4480099DBBD /* Copy Models */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = CelestiaResources/models;
 			dstSubfolderSpec = 7;
 			files = (
@@ -473,11 +473,11 @@
 				E5D969B30ABCC7CC00F43225 /* Sc.png in Copy Models */,
 			);
 			name = "Copy Models";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E5D767FB0982B75B0099DBBD /* Copy Textures */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = CelestiaResources/textures;
 			dstSubfolderSpec = 7;
 			files = (
@@ -488,7 +488,7 @@
 				E50DB0F30D4AB5AA00FD137F /* hires in Copy Textures */,
 			);
 			name = "Copy Textures";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
